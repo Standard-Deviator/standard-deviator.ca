@@ -23,7 +23,7 @@ date_end: '2020-09-19T21:34:27-04:00'
 all_day: no
 publishDate: '2020-09-19T21:34:27-04:00'
 authors: [admin]
-featured: no
+featured: yes
 image:
   caption: ''
   focal_point: ''
@@ -45,3 +45,19 @@ projects: []
 
   <a class="btn btn-outline-primary my-1 mr-1" href="/workshop/CPA_2020_data_cleaning_tidyverse/slides/Section_3.html" target="_blank" rel="noopener">Section 3 Slides</a>
 :::
+
+This workshop was presented virtually at the 81st Canadian Psychological Association (CPA) Annual National Convention. It was broken down into three sections:
+
+  1. Things to look for
+  2. Tidy Data
+  3. Profiling Missingness and Dates
+
+Summary:  
+
+Data cleaning is a time consuming and often error-prone process which every researcher will experience. It is said that 80% of data analysis time is spent on the process of cleaning and preparing the data (Dasu & Johnson, 2003), but this time spent cleaning and preparing data can be dramatically reduced by using the right tools/techniques for the job. The workshop will begin with a foundational discussion on data structures within R and general coding practices. The focus will then shift to the more practical topics of using a variety of packages to import/export data, inspect and manipulate specific types of data (including categorical, dates, and character type), reformat data, and produce quality graphics to showcase your data. A publicly available dataset will be used as a running example throughout the workshop to provide hands-on experience using each of the techniques discussed. Periodic interactive exercises will be presented to allow attendees an opportunity to work collaboratively to solve common data cleaning dilemmas. Attendees are encouraged to bring data from their own research to apply the techniques covered throughout the workshop.
+
+
+**Adkins, M.C.**, & Cribbie, R. Better (and Quicker) Data Cleaning using R
+and the Tidyverse. *Pre-Convention PD Workshop - Half Day. 81st Canadian
+Psychological Association Annual National Convention*, Montréal, Quebec,
+Canada.
