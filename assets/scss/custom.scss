@@ -1,0 +1,210 @@
+body{
+  /*font-family: Helvetica;*/
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16pt;
+}
+
+/* -----------revealing output------------- */
+input:checked + div { display: none; }
+
+.r{ /* Code block */
+    font-size: 20px;
+}
+
+pre { /* Code block - determines code spacing between lines */
+    font-size: 20px;
+}
+
+/* -----------div tips------------- */
+
+  div.puzzle, div.fyi, div.demo, div.note {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #1f5386;
+    background-color: #bed3ec;
+    border: solid 5px #dfedff;
+  }
+
+div.puzzle {
+  background-image: url("../img/Your-turn.png");
+  background-color: #AFD275;
+  border-color: #479761;
+}
+
+div.fyi {
+ background-image: url("../img/fyi.png");
+}
+
+div.demo {
+  background-image: url("../img/Live-code.png");
+}
+
+div.note {
+  background-image: url("../img/lightbulb.png");
+  background-color: #F3D250;
+  /* #FCCD04; */
+  border-color: #FFE400;
+}
+/*
+h1 {
+  font-family: 'Roboto Slab', serif;
+}*/
+
+/* https://towardsdatascience.com/add-animations-to-your-hugo-academic-site-easily-6aae61b52bd7 */
+
+
+/* section animations */
+@-webkit-keyframes slide-from-right {
+  0% {-webkit-transform: translateX(150%);transform: translateX(150%)}
+  100% { -webkit-transform: translateX(0%); transform: translateX(0%); }
+}
+
+@keyframes slide-from-right {
+  0% {-webkit-transform: translateX(150%);transform: translateX(150%)}
+  100% { -webkit-transform: translateX(0%); transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-from-left {
+    0% {-webkit-transform: translateX(-150%);transform: translateX(-150%)}
+    100% { -webkit-transform: translateX(0%); transform: translateX(0%); }
+  }
+
+@keyframes slide-from-left {
+  0% {-webkit-transform: translateX(-150%);transform: translateX(-150%)}
+  100% { -webkit-transform: translateX(0%); transform: translateX(0%); }
+}
+
+
+/* fade-in animation: profile avatar */
+@-webkit-keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: .9;
+	}
+
+	50% {
+	  opacity: .3;
+	}
+
+	100% {
+	  opacity: .9;
+	}
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .9;
+	}
+
+	50% {
+	  opacity: .3;
+	}
+
+	100% {
+	  opacity: .9;
+	}
+}
+
+#about {
+
+  .biography-title {
+    -webkit-animation: slide-from-right 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+            animation: slide-from-right 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  }
+
+  .main-content {
+    -webkit-animation: slide-from-right 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+            animation: slide-from-right 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+    -webkit-animation-delay: 100ms;
+            animation-delay: 100ms;
+  }
+
+
+  #profile {
+    -webkit-animation: slide-from-left 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+            animation: slide-from-left 1s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  }
+
+
+  .col-md-5 {
+    opacity: 0;
+    -webkit-animation: fade-in 1s forwards;
+            animation: fade-in 1s forwards;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+
+  .col-md-7 {
+    opacity: 0;
+    -webkit-animation: fade-in 1s forwards;
+            animation: fade-in 1s forwards;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+  }
+
+  .avatar {
+    -webkit-animation: pulse 5s ease-in-out infinite;
+          animation: pulse 5s ease-in-out infinite;
+    -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  }
+  /* Pulse the social icons
+  i{
+    -webkit-animation: pulse 5s ease-in-out infinite;
+        animation: pulse 5s ease-in-out infinite;
+    -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+  } */
+}
+
+/* https://codersblock.com/blog/creating-glow-effects-with-css/ */
+
+body.dark {
+  .avatar:not(.mr-3) {
+    /*width: 40px;
+    height: 40px;*/
+    opacity: .9;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow:
+      0 0 60px 30px #fff,  /* inner white */
+      0 0 100px 60px #f0f, /* middle magenta */
+      0 0 140px 90px #0ff; /* outer cyan */
+  }
+  #profile i:hover{
+    /*width: 40px;
+    height: 40px;*/
+    opacity: .7;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow:
+      0 0 30px 15px #fff,  /* inner white */
+      0 0 50px 30px #f0f, /* middle magenta */
+      0 0 70px 45px #0ff; /* outer cyan */
+  }
+}
+
+body .avatar:not(.mr-3){
+  /*width: 40px;
+  height: 40px;*/
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+    0 0 60px 30px #008080,  /* inner white */
+    0 0 100px 60px #272935, /* middle magenta */
+    0 0 140px 90px #f8f8f2; /* outer cyan */
+}
