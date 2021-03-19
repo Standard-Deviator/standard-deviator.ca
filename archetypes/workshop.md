@@ -30,4 +30,4 @@ projects: []
 
 {{ .Title }}
 
-This is part of the new archetype
+{{ .Summary }}
