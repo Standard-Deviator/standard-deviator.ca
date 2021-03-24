@@ -29,5 +29,3 @@ projects: []
 ---
 
 {{ .Title }}
-
-{{ .Summary }}
