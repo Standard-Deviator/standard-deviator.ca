@@ -13,13 +13,13 @@
   {{ $summary = $item.Summary }}
 {{ end }}
 
-<div class="card-simple">
+<div class="card-simple gradient">
   <span class="card-gradient"></span>
     {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
     {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
     {{ with $resource }}
     {{ $image := .Fill (printf "808x455 %s" $anchor) }}
-    <a href="{{ $item.RelPermalink }}">
+     <a href="{{ $item.RelPermalink }}">
       <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="{{ $item.Title }}" loading="lazy">
       </a>
     {{end}}

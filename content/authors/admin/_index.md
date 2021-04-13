@@ -23,9 +23,11 @@ organizations:
 bio: My research interests include Monte Carlo Simulations, statistical consulting, and statistical pedagogy.
 
 interests:
-- Statistical Simulation
+- Monte Carlo Simulations
 - Teaching statistics
 - Data cleaning
+- Teaching R
+- Workshops
 
 education:
   courses:
@@ -72,4 +74,4 @@ user_groups:
 - Visitors
 ---
 
-Mark Adkins is a doctoral candidate in Quantitative Methods in the Psychology Department at York University and a TA in SCS. He has years of experience as a statistical/programming tutor and has the ability to help students master complicated material regardless of their stage in the learning process.
+Mark Adkins is a doctoral candidate in the Quantitative Methods area within the Psychology Department at York University. He has been a TA in the statistical consulting service (SCS) at York and has designed a short course for teaching R using the Tidyverse. He has years of experience as a statistical/programming tutor and has the ability to help students master complicated material regardless of their stage in the learning process.

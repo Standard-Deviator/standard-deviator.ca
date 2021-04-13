@@ -18,5 +18,5 @@ url_video = ""
 #[header]
 #image = "headers/bubbles-wide.jpg"
 #caption = "My caption :smile:"
-
+type = "event"
 +++
