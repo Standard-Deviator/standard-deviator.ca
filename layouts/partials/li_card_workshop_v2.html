@@ -13,18 +13,15 @@
   {{ $summary = $item.Summary }}
 {{ end }}
 
-<div class="card-simple">
-  <span class="card-gradient"></span>
+<div class="card-simple workshop">
     {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
     {{ $anchor := $item.Params.image.focal_point | default "Smart" }}
     {{ with $resource }}
     {{ $image := .Fill (printf "808x455 %s" $anchor) }}
-    <a href="{{ $item.RelPermalink }}">
       <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="{{ $item.Title }}" loading="lazy">
-      </a>
     {{end}}
     <div class="card-body">
-
+      <div class="face face1">
         <div class="card-title">
           <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
         </div>
@@ -46,7 +43,11 @@
           {{ else }}
             {{ partial "page_metadata" (dict "page" $item "is_list" 1) }}
           {{ end }}
+        </div>
+      </div>
 
+      <div class="face face2">
+        <div class="content">
           {{ with $summary }}
             <a href="{{ $item.RelPermalink }}" class="summary-link">
               <div class="article-style">
@@ -61,6 +62,6 @@
             </div>
           {{ end }}
         </div>
-
+      </div>
   </div>
 </div>
