@@ -38,4 +38,15 @@ subtitle = ""
   name = "Listening to Podcasts"
   description = "80%"
 
+[[feature]]
+  icon = "fab fa-html5"
+  icon_pack = "fab"
+  name = "HTML"
+  description = "100%"
+  
+[[feature]]
+  icon = "fab fa-css3-alt"
+  icon_pack = "fab"
+  name = "CSS"
+  description = "100%"
 +++

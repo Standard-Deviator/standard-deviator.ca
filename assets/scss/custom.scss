@@ -255,7 +255,7 @@ body .avatar:not(.mr-3){
 /* altered layouts/partial/navbar.html to add data-text attribute
 inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
 .dark .navbar-brand {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   position: relative;
   color: #282a36;
@@ -267,12 +267,13 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
 .dark .navbar-brand::before {
   content: attr(data-text);
   position: absolute;
+  box-sizing: border-box;
   top: 0;
   left: 0;
   width: 0%;
   height: 100%;
   color: var(--secondary);
-  -webkit-transform-stroke: 0.3vm var(--secondary);
+  transform-stroke: 0.3vm var(--secondary);
   border-right: 2px solid #01fe87;
   overflow: hidden;
   animation: reveal 6s ease-in-out;
@@ -559,6 +560,7 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
   background: linear-gradient(45deg, var(--secondary), var(--primary));
   filter: blur(20px);
 }
+
 
 .dark .card-simple span.card-gradient {
   position: absolute;
