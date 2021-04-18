@@ -1,7 +1,7 @@
 ---
 title: Small Steps Towards Reproducible Data Analyses
 author: admin
-date: '2020-09-19T13:00:00-04:00'
+date: '2020-07-28T13:00:00-04:00'
 slug: []
 categories:
   - workshop
@@ -13,11 +13,11 @@ location: 'Delivered Virtually'
 subtitle: ''
 summary: 'Open and transparent reporting of scientific findings is an integral part of establishing the credibility and accountability of any line of research. With many journals accepting and promoting open data and materials, there is a need for researchers to have both the technical skills to implement open science practices and the commitment to improving the quality of their shared data and materials.'
 abstract: 'Open and transparent reporting of scientific findings is an integral part of establishing the credibility and accountability of any line of research. With many journals accepting and promoting open data and materials, there is a need for researchers to have both the technical skills to implement open science practices and the commitment to improving the quality of their shared data and materials. This workshop will discuss the conceptual benefits of using version control, developing reproducible R workflows, and better coding practices which avoid common errors. By interweaving these concepts and practices into various parts of the research process, researchers can improve the quality and transparency of the products of their own research and (by extension) provide quality materials upon which other researchers can build upon.'
-date_end: '2020-09-19T14:00:00-04:00'
+date_end: '2020-07-28T14:00:00-04:00'
 all_day: no
-publishDate: '2020-09-19'
+publishDate: '2020-07-28'
 authors: [admin]
-lastmod: '2029-09-19'
+lastmod: '2020-07-28'
 featured: no
 image:
   placement: 1
