@@ -13,7 +13,7 @@
   {{ $summary = $item.Summary }}
 {{ end }}
 
-<div class="card-simple gradient">
+<div class="card-simple gradient" data-tilt>
   <span class="card-gradient"></span>
     {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
     {{ $anchor := $item.Params.image.focal_point | default "Smart" }}

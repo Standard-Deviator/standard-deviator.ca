@@ -319,6 +319,8 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
   margin-left: 20px;
   max-width: 45%;
   min-width: 300px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
 }
 
 .card-simple.gradient .card-img-top{
@@ -359,12 +361,21 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
 
 .dark .card-simple.gradient .card-body .content {
   position: relative;
-  z-index: 10;
+  z-index: 8;
 }
+
+
 .dark .card-simple.gradient .card-title a{
   position: relative;
   color: whitesmoke;
   z-index: 4;
+}
+
+.dark .card-simple.gradient .card-title {
+  transform: translateZ(80px);
+  -webkit-trasform: translateZ(80px);
+  -moz-transform: translateZ(80px);
+  transform-style: preserve-3d;
 }
 
 /************************************
@@ -435,6 +446,11 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
   position: relative;
   color: whitesmoke;
   z-index: 4;
+}
+
+.dark .card-simple .card-title {
+  position: relative;
+  z-index: 2;
 }
 /************************************
  *    Changes to Dark theme         *

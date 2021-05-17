@@ -1,0 +1,217 @@
+---
+title: "Preregistration: A Practical Guide"
+author: "Mark Christopher Adkins"
+institute: "York University"
+date: "2021/05/24 (last updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+      titleSlideClass: ["middle","center","inverse"]
+---
+
+layout: true
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent_inverse(
+  primary_color = "#1e90ff",
+  secondary_color = "#78D1D9",
+  title_slide_background_color = "#000000",
+  background_color = "#000000",
+  text_font_size = "18pt"
+  )
+```
+
+---
+
+background-position: center
+background-size: contain
+
+background-image: url(images/Preregistration-a-practical-guide-splash.jpg)
+
+???
+Photo by <a href="https://unsplash.com/@sevhoein?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Severin Höin</a> on <a href="https://unsplash.com/s/photos/guide?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+---
+
+# Land Acknowledgement
+
+York University recognizes that many Indigenous Nations have longstanding relationships with the territories upon which York University campuses are located that precede the establishment of York University. York University acknowledges its presence on the traditional territory of many Indigenous Nations. The area known as Tkaronto has been care taken of by the Anishinabek Nation, the Haudenosaunee Confederacy, and the Huron-Wendat. It is now home to many First Nation, Inuit and Métis communities. We acknowledge the current treaty holders, the Mississaugas of the Credit First Nation. This territory is subject of the Dish with One Spoon Wampum Belt Covenant, an agreement to peaceably share and care for the Great Lakes region.
+
+Ho-de-no-sau-nee-ga (Haudenosaunee)
+
+--
+
+Anishinabewaki ᐊᓂᔑᓈᐯᐗᑭ
+
+--
+
+Mississauga
+
+--
+
+Wendake-Nionwentsïo
+
+--
+
+[https://native-land.ca/](https://native-land.ca/)    
+[https://www.whose.land/en/](https://www.whose.land/en/)
+
+---
+
+# Why is everyone here?
+
+Zoom poll!
+
+???
+
+I was told to fill out a prereg   
+I heard it might be a good thing to do  
+I have done one before, but I want to get better at them  
+The workshop was free, so I figured "why not?"  
+
+---
+# What is preregistration?
+
+--
+
+>"Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes"
+
+.right[Nosek, Ebersole, DeHaven, & Mellor, 2015]
+
+--
+
+There are some key things which should be present for any preregistration:
+
+* it should relate to a specific study, not a class of studies
+* ideally, the preregistration should be public and findable/accessible by anyone
+* authors should state data collection and analysis plans prior
+
+.right[Navarro, 2019]
+
+
+--
+
+> Every research practice comes with costs and benefits, and it is useful to evaluate whether and when it is worth preregistering your study.
+
+.right[Lakens, 2018]
+
+???
+So before you sit down to start a preregistration, I encourage you to think carefully about what you aim to achieve via this process
+---
+
+# What can preregistration **NOT** do for you?
+
+I want to clear up some common misconceptions that are floating around:
+
+* Preregistered research is not higher quality relative to non-preregistered research
+  * There isn't some magical emergent property.    
+--
+* Preregistration provides transparency.     
+  * A good preregistration can provide transparency, but it is not guaranteed.    
+--
+* Preregistration prevents *p-hacking* and other questionable research practices (QRPs)     
+
+
+---
+
+# What **CAN** preregistration do for you?
+
+* It can be a tool to increase the transparency of your research
+* It can help delineate prediction from postdiction
+  * Or exploratory versus confirmatory analyses
+
+> Mistaking postdiction as prediction underestimates the uncertainty of outcomes and can produce psychological overconfidence in the resulting findings.
+
+.right[Nosek, Ebersole, DeHaven, & Mellor, 2015]
+
+???
+I like to think of it like a game of pool. What's more believable: a called shot who someone who just hits the balls really hard and one happens to go in?
+
+Find picture!!
+---
+
+# Benfits of Preregistration
+
+
+Increase discoverability
+*  "help to address the file drawer effect (Rosenthal, 1979; Franco, Malhotra, & Simonovits, 2014)"
+* help reduce unintentional false positive inflation of results (Forstmeier, Wagenmakers, & Parker, 2017)
+
+---
+
+# A preregistration plan is **NOT** a prison sentence
+
+[https://www.cos.io/blog/preregistration-plan-not-prison](https://www.cos.io/blog/preregistration-plan-not-prison)
+
+???
+
+Find picture
+
+This is an opinion I have encountered both online and in person. The crux is that by having to preregister everything leaves little room for the creative process of making inquiries about nature.
+
+You can still do those things. A prereg plan merely demarcks one from the other.
+
+I think the claim that it limits scientific curiousity is more of a statement about a researcher than it is of this tool.
+
+---
+
+# What **should** be included in a preregistration?
+
+This is a tricky question with no clear answer.
+
+As a methodologist, the answer is:
+
+--
+
+It depends!
+
+--
+
+* On the type of research you are conducting (confirmatory or exploratory)
+* On the level of transparency you are striving for
+* the time you have to front-load on your project
+
+Whatever you choose to include should be in service of your reason for completing a preregistration plan.
+
+If your goal is transparency, then I suggest you check out this list about avoiding p-hacking [https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01832/full](https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01832/full)
+
+
+Do what you can to make your decisions in advance of collecting data
+
+or this [Guide to Pre-Analysis Plans](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjfvfiEm83wAhVGZM0KHe-qCIIQFjAAegQIAhAD&url=https%3A%2F%2Fosf.io%2Fsh4v8%2Fdownload&usg=AOvVaw255Pud_0CqwZzgIhl4KFmf)
+
+---
+
+# What **should** be included in a preregistration?
+
+An often overlooked part of the preregistration process is how to avoid "Questionable Measurement Practices" (QRMs).
+
+A great paper for this can be found here:
+[Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them](https://journals.sagepub.com/doi/full/10.1177/2515245920952393)
+
+The authors list a series of 6 questions which were developed to promote transparent reporting of measurement practices.
+
+---
