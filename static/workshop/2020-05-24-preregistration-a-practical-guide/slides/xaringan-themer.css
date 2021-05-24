@@ -264,3 +264,15 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: var(--black);
 }
 
+
+
+/* Extra CSS */
+.background-white {
+  background-color: white;;
+}
+h1 {
+  text-transform: capitalize;;
+}
+a:hover {
+  text-decoration: underline;;
+}

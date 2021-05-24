@@ -8,7 +8,7 @@ output:
     css: xaringan-themer.css
     seal: false
     nature:
-      slideNumberFormat: "%current%"
+      slideNumberFormat: "%current%/%total%"
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
   fig.width=9, fig.height=3.5, fig.retina=3,
   out.width = "100%",
   cache = FALSE,
-  echo = TRUE,
+  echo = FALSE,
   message = FALSE, 
   warning = FALSE,
   fig.show = TRUE,
@@ -39,8 +39,10 @@ style_duo_accent_inverse(
   secondary_color = "#78D1D9",
   title_slide_background_color = "#000000",
   background_color = "#000000",
-  text_font_size = "18pt"
-  )
+  text_font_size = "18pt",
+  extra_css = list(".background-white" = list("background-color" = "white;"),
+                   "h1" = list("text-transform" = "capitalize;"),
+                   "a:hover" = list("text-decoration" = "underline;")))
 ```
 
 ---
@@ -51,39 +53,59 @@ background-size: contain
 background-image: url(images/Preregistration-a-practical-guide-splash.jpg)
 
 ???
+
+* code of conduct
+  * respectful of others and their opinions
+  * harassment will not be tolerated
+* Please feel free to interrupt with questions, preferably through chat or Zoom's raise hand feature
+* for those not familiar with Xaringan slides, "h" brings up a help menu for navigating the slides
+* photo credits are also listed in the presenter notes
+
 Photo by <a href="https://unsplash.com/@sevhoein?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Severin Höin</a> on <a href="https://unsplash.com/s/photos/guide?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-
 ---
 
-# Land Acknowledgement
+# A little about me
 
-York University recognizes that many Indigenous Nations have longstanding relationships with the territories upon which York University campuses are located that precede the establishment of York University. York University acknowledges its presence on the traditional territory of many Indigenous Nations. The area known as Tkaronto has been care taken of by the Anishinabek Nation, the Haudenosaunee Confederacy, and the Huron-Wendat. It is now home to many First Nation, Inuit and Métis communities. We acknowledge the current treaty holders, the Mississaugas of the Credit First Nation. This territory is subject of the Dish with One Spoon Wampum Belt Covenant, an agreement to peaceably share and care for the Great Lakes region.
-
-Ho-de-no-sau-nee-ga (Haudenosaunee)
+I'm a fourth year doctoral candidate in the Quantitative Methods program within the Psychology Department at York University (Toronto, Canada).
 
 --
 
-Anishinabewaki ᐊᓂᔑᓈᐯᐗᑭ
+You find out more about my projects and other workshops I have conducted at [www.standard-deviator.com](http://www.standard-deviator.com)
 
---
 
-Mississauga
+???
 
---
-
-Wendake-Nionwentsïo
-
---
-
-[https://native-land.ca/](https://native-land.ca/)    
-[https://www.whose.land/en/](https://www.whose.land/en/)
-
+* I attended the Oxford | Berlin Summer School on Open Research in the fall of 2019
+* Started a local branch of the Reproducibilitea journal clubs here at York University
+* I run workshops which emphasize reproducible research
+* My own research focuses on current practices for estimating and interpreting effect sizes, improving statistical pedagogy, and developing tools which instructors can implement within their own classrooms to help improve statistical literacy, thinking, and reasoning.
+* I need you help. Please *politely* interrupt me or message in chat/raise your hand if you want further clarification or have a question.
+    *   This workshop will be more beneficial to everyone by it being interactive. After all, you can just watch a video on YouTube or read one of the many excellent blog posts explaining the process
 ---
 
-# Why is everyone here?
+# A little about you
 
-Zoom poll!
+.center[
+```{r echo=FALSE}
+library(leaflet) # Load required libraries
+library(dplyr)
+map_data <- data.frame(lat = c(43.77429017951844, 43.77429017951844, 42.45254797789304, 40.42390145536043, 33.21415932335242, 43.77429017951844, 43.77429017951844, 53.946077307935894, -22.786457638299623, 21.493631494528703, 40.1019686922611, 40.00765493994649, 51.52803862706345, 38.940464228340694, 35.90486872871133, 42.93285214448561, 40.00678733068392, 35.153978088011655, 40.00765493994649, 38.435091979544715, 41.87335298953233, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844, 43.77429017951844), lng = c( -79.50201860369798, -79.50201860369798, -76.4811084051002, -86.92177392802606, -87.53856355918336,  -79.50201860369798, -79.50201860369798, -1.0519327339709428,  -46.51361004970487, 39.23925453326184, -88.22724733252316, -105.26580222697865, -0.10247313034941088, -92.32764094234788, -79.04719235166603, -85.58167614779099, 
+ -83.03061553437459, 136.96807926550773, -105.26580222697865, 
+ -78.86964751352478, -87.66973092453068,-79.50201860369798, 
+ -79.50201860369798, -79.50201860369798,-79.50201860369798, 
+ -79.50201860369798,-79.50201860369798, -79.50201860369798, 
+ -79.50201860369798, -79.50201860369798, -79.50201860369798
+))
+
+map_data %>%
+  distinct() %>% 
+  leaflet(height = 500) %>%
+  addTiles() %>% 
+  addMarkers(lng=map_data$lng, lat=map_data$lat)
+```
+]
+
 
 ???
 
@@ -93,13 +115,62 @@ I have done one before, but I want to get better at them
 The workshop was free, so I figured "why not?"  
 
 ---
+
+.pull-left[
+# Center for Open Science (COS)
+.background-white.center[
+![](images/Center_for_Open_Science.png)
+]
+* [https://www.cos.io/](https://www.cos.io/)
+]
+
+.pull-right[
+# Open Science Framework (OSF)
+.background-white.center[
+![](images/osf-logo-black.original_0.png)
+]
+* [https://osf.io/](https://osf.io/)
+* [Helpful guides](https://help.osf.io/hc/en-us/)
+]
+
+???
+**Demonsrate COS link**
+---
+
+# Open Researcher and Contributor ID (ORCID)
+
+.pull-left[
+### Some Benefits:
+* You will be distinguished from every other researcher, even researchers who share your same name,
+* Your research outputs and activities will be correctly attributed to you,
+* Your contributions and affiliations will be reliably and easily connected to you,
+* You will enjoy improved discoverability and recognition,
+* Your ORCID record is yours, for free, forever.
+]
+
+.pull-right[
+![](images/2560px-ORCID_logo.svg.png)
+[https://orcid.org/](https://orcid.org/)
+]
+???
+Some of the journals which I submit my manuscripts to requires an Orcid ID, I mainly use it to signin to OSF and link my projects.
+Another great benefit is that this ID stays tied to you, even if you change institutions. You might want to use a personal/stable email address in case you no longer have access to your institutional email.
+---
 # What is preregistration?
+
+>"...you're simply specifying your research plan in advance of your study and submitting it to a registry."
+
+.right[
+[www.cos.io/initiatives/prereg](https://www.cos.io/initiatives/prereg)
+]
 
 --
 
 >"Preregistration of an analysis plan is committing to analytic steps without advance knowledge of the research outcomes"
 
-.right[Nosek, Ebersole, DeHaven, & Mellor, 2015]
+.right[
+[Nosek, Ebersole, DeHaven, & Mellor, 2015](https://www.pnas.org/content/115/11/2600.full/)
+]
 
 --
 
@@ -109,72 +180,192 @@ There are some key things which should be present for any preregistration:
 * ideally, the preregistration should be public and findable/accessible by anyone
 * authors should state data collection and analysis plans prior
 
-.right[Navarro, 2019]
+.right[
+[Navarro, 2019](https://psyarxiv.com/wxn58/)
+]
 
-
---
-
-> Every research practice comes with costs and benefits, and it is useful to evaluate whether and when it is worth preregistering your study.
-
-.right[Lakens, 2018]
 
 ???
 So before you sit down to start a preregistration, I encourage you to think carefully about what you aim to achieve via this process
----
-
-# What can preregistration **NOT** do for you?
-
-I want to clear up some common misconceptions that are floating around:
-
-* Preregistered research is not higher quality relative to non-preregistered research
-  * There isn't some magical emergent property.    
---
-* Preregistration provides transparency.     
-  * A good preregistration can provide transparency, but it is not guaranteed.    
---
-* Preregistration prevents *p-hacking* and other questionable research practices (QRPs)     
-
 
 ---
 
-# What **CAN** preregistration do for you?
+# What a preregistration is not?
 
-* It can be a tool to increase the transparency of your research
-* It can help delineate prediction from postdiction
-  * Or exploratory versus confirmatory analyses
+
+.center[
+## Preprint
+]
+.pull-left[
+![](images/psyarxiv_logo.png)
+]
+
+.pull-right[
+* A manuscript posted (usually after data collection) on a public repository which has not been peer-reviewed
+* [https://psyarxiv.com/](https://psyarxiv.com/)
+]
+
+--
+
+.center[
+## Registered Report
+]
+.pull-left[
+![](images/registered_reports.width-800.png)
+]
+
+.pull-right[
+* A preregistration is the starting block for a registered report.
+* [https://www.cos.io/initiatives/registered-reports](https::/https://www.cos.io/initiatives/registered-reports/)
+]
+
+---
+# Badges
+
+
+.pull-left[
+.background-white[
+![](images/NkuGiDc.png)
+]
+
+1.	A public date-time stamped registration is in an institutional registration system (e.g., ClinicalTrials.gov, Open Science Framework, AEA Registry, EGAP).
+2.	Registration pre-dates the intervention.
+3.	Registered design corresponds directly to reported design.
+4.	Full disclosure of results in accordance with registered plan.
+]
+
+--
+
+.pull-right[
+.background-white[
+![](images/4aGad90.png)
+]
+
+3.Registered design and analysis plan corresponds directly to reported design and analysis.
+
+
+[Check out the badges](https://osf.io/tvyxz/wiki/1.%20View%20the%20Badges/)
+
+]
+
+???
+
+A general warning, I know that no one hear is doing a prereg just for a badge, but there is concern that trying to achieve these badges will just become the new ritual which researchers "mindlessly" follow. However, I think that much good would come from the typical increase in transparency.
+
+---
+# Transparency Openness Promotion (TOP) Guidelines
+
+>"The TOP Guidelines were created by journals, funders, and societies to align scientific ideals with practices."
+
+.right[
+[https://www.cos.io/initiatives/top-guidelines](https://www.cos.io/initiatives/top-guidelines/)
+]
+
+The Open Science Framework (OSF) maintains a [database](https://topfactor.org/) which ranks journal policies in terms of their compliance with these guidelines. This database can be used to see if your target journal requires preregistration ro any of the other eight modules contained in the TOP guidelines.
+
+???
+**Demonstrate the database link**
+---
+
+# What preregistrations can do
+
+--
+
+It depends on your purpose!
+
+--
+
+A preregistration can ...
+
+* improve the transparency of your research
+
+--
+
+* reduce researcher degrees of freedom
+
+--
+
+* reduce file drawer effect
+  * though publishing a preprint would be more effective
+
+--
+
+* reduce publication bias
+
+--
+
+* help reduce unintentional false positive inflation of results ([Forstmeier, Wagenmakers, & Parker, 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/brv.12315/))
+
+--
+
+* be a tool to help clarify your thinking
+
+--
+
+* delineate prediction from postdiction (i.e., exploratory versus confirmatory analyses)
+---
+
+# What preregistrations can do
 
 > Mistaking postdiction as prediction underestimates the uncertainty of outcomes and can produce psychological overconfidence in the resulting findings.
 
-.right[Nosek, Ebersole, DeHaven, & Mellor, 2015]
+.right[
+[Nosek, Ebersole, DeHaven, & Mellor, 2015](https://www.pnas.org/content/115/11/2600.full/)
+]
+
+.pull-left[
+![](images/alexandre-lion-LsEL4F5POBI-unsplash.jpg)
+]
 
 ???
 I like to think of it like a game of pool. What's more believable: a called shot who someone who just hits the balls really hard and one happens to go in?
 
-Find picture!!
+Photo by <a href="https://unsplash.com/@alxlion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexandre Lion</a> on <a href="https://unsplash.com/s/photos/billiards?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 ---
 
-# Benfits of Preregistration
+# What preregistrations can **NOT** do for you?
 
+Preregistration cannot ...
 
-Increase discoverability
-*  "help to address the file drawer effect (Rosenthal, 1979; Franco, Malhotra, & Simonovits, 2014)"
-* help reduce unintentional false positive inflation of results (Forstmeier, Wagenmakers, & Parker, 2017)
+* improve your research simply through the act of preregistering it
+
+--
+
+* increase the transparency of your research (however a "good" preregistration can)
+
+--
+
+* prevent p-hacking and other questionable research practices (QRPs)
+
 
 ---
 
 # A preregistration plan is **NOT** a prison sentence
 
+.pull-left[
+![](images/denny-muller-uWYedErgXgU-unsplash.jpg)
+]
+
+.pull-right[
+
+* It is perfectly fine to deviate from your preregistration plan, so long as you clearly state where and WHY you deviated from the plan
+* The closer you stick to the plan, the more credibility your predictions will have
+
 [https://www.cos.io/blog/preregistration-plan-not-prison](https://www.cos.io/blog/preregistration-plan-not-prison)
+]
 
 ???
 
-Find picture
 
 This is an opinion I have encountered both online and in person. The crux is that by having to preregister everything leaves little room for the creative process of making inquiries about nature.
 
-You can still do those things. A prereg plan merely demarcks one from the other.
+You can still do those things. A prereg plan merely delineates one from the other.
 
-I think the claim that it limits scientific curiousity is more of a statement about a researcher than it is of this tool.
+I think the claim that it limits scientific curiosity is more of a statement about a researcher than it is of this tool.
+
+Photo by <a href="https://unsplash.com/@redaquamedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Denny Müller</a> on <a href="https://unsplash.com/s/photos/prison?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 ---
 
@@ -194,24 +385,123 @@ It depends!
 * On the level of transparency you are striving for
 * the time you have to front-load on your project
 
+--
+
 Whatever you choose to include should be in service of your reason for completing a preregistration plan.
+---
+# What **should** be included in a preregistration?
 
-If your goal is transparency, then I suggest you check out this list about avoiding p-hacking [https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01832/full](https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01832/full)
+If the goal is to limit researcher degrees of freedom, then care must be taken at each stage:
+* planning
+* running
+* analyzing
+* reporting
 
+--
 
-Do what you can to make your decisions in advance of collecting data
+I suggest you check out this article by [Wicherts, Veldkamp, Augusteijn, Bakker, van Aert, van Assen; 2016](https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01832/full) which lists researcher degrees of freedom across the many stages in their [Table 1.](https://www.frontiersin.org/files/Articles/222767/fpsyg-07-01832-HTML/image_m/fpsyg-07-01832-t001.jpg/)
 
-or this [Guide to Pre-Analysis Plans](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjfvfiEm83wAhVGZM0KHe-qCIIQFjAAegQIAhAD&url=https%3A%2F%2Fosf.io%2Fsh4v8%2Fdownload&usg=AOvVaw255Pud_0CqwZzgIhl4KFmf)
+--
+
+You can also follow this guide which has a checklist for what to include
+
+[Download Guide to Pre-Analysis Plans from OSF.io](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjfvfiEm83wAhVGZM0KHe-qCIIQFjAAegQIAhAD&url=https%3A%2F%2Fosf.io%2Fsh4v8%2Fdownload&usg=AOvVaw255Pud_0CqwZzgIhl4KFmf)
 
 ---
 
 # What **should** be included in a preregistration?
 
-An often overlooked part of the preregistration process is how to avoid "Questionable Measurement Practices" (QRMs).
+An often overlooked part of the preregistration process is how to avoid "Questionable Measurement Practices" (QMRs).
 
-A great paper for this can be found here:
-[Measurement Schmeasurement: Questionable Measurement Practices and How to Avoid Them](https://journals.sagepub.com/doi/full/10.1177/2515245920952393)
 
-The authors list a series of 6 questions which were developed to promote transparent reporting of measurement practices.
+[Flake and Fried (2020)](https://journals.sagepub.com/doi/full/10.1177/2515245920952393/) listed a series of 6 questions which were developed to promote transparent reporting of measurement practices.
+
+1. What is your construct?
+2. Why and how did you select your measure?
+3. What measure dd you use to operationalize the construct?
+4. How did you quantify your measure?
+5. Did you modify the scale? And if so, how and why?
+6. Did you create the measure on the fly?
 
 ---
+
+# Let's try to complete a Preregistration
+
+Notes:
+
+There is no single way to do this. I'm just showing my preferred method.
+
+I will be using my ORCID to access OSF and create a repository.
+
+---
+
+# Create A Preregistration
+
+1. Log into [https://www.osf.io/](https://www.osf.io/) using my ORCID
+2. From the OSF dashboard, click "Create new project" button
+  * Enter Title, Storage Location, and a description
+2. Within the new project page, select the "Registrations" tab from the top navbar, then press the "New registration button"
+  * select the template most appropriate for your project (you can preview them at [https://osf.io/zab38/wiki/home/](https://osf.io/zab38/wiki/home/))
+  * I will select the standard, comprehensive, and general purpose form    
+      * Metadata
+      * Study Information
+      * Design Plan
+      * Sampling Plan
+      * Variables
+      * Analysis Plan
+      * Other
+
+[https://help.osf.io/hc/en-us/articles/360019738834-Create-a-Preregistration](https://help.osf.io/hc/en-us/articles/360019738834-Create-a-Preregistration/)
+
+---
+
+# Tips
+
+It can be helpful to visualize parts of your design or analysis using a flowchart, [http://ecomodeler.org/](http://ecomodeler.org/) is a great/free tool for generating decision trees and flowcharts.
+* You can export the image and the model file to upload as part of your OSF project or a preregistration plan
+
+--
+
+Sometimes you might want to include a decision tree which outlines how you might proceed WHEN particular analytics conditions arise (e.g., violated model assumptions)
+
+--
+
+If you are familiar with the variables and analysis plan, you can upload a script or syntax file which you will use to conduct your analysis.
+* Here is an example I used for a data analysis challenge with a few colleagues [https://osf.io/qc9e6/](https://osf.io/qc9e6/)
+
+???
+**Demonstrate ecomodeler.org**
+**Show my prereg_script.R**
+---
+# Reporting Preregistered Research
+
+* Include a link to the original preregistration plan
+* Report the results of all prespecified tests (e.g., tests)
+* Clearly label any unplanned analyses
+* Include a transparent changes document
+
+[https://help.osf.io/hc/en-us/articles/360021390833-Preregistration](https://help.osf.io/hc/en-us/articles/360021390833-Preregistration)
+
+---
+
+# Closing Remarks
+
+>"Every research practice comes with costs and benefits, and it is useful to evaluate whether and when it is worth preregistering your study"
+
+>"If the use of a tool is detached from a philosophy of science it risks becoming a heuristic. Researchers should not choose to preregister because it has become a new norm, but they should preregister because they can justify based on their philosophy of science how preregistration supports their goals."
+
+.right[
+[Lakens, 2019](https://psyarxiv.com/jbh4w/)
+]
+
+---
+
+# Questions
+
+---
+
+# Advanced Tips and Tricks
+
+* Check out the R package {DeclareDesign} at [https://declaredesign.org/](https://declaredesign.org/)
+* Check out [Improving Transparency, Falsifiability, and Rigor by Making Hypothesis Tests Machine-Readable](https://journals.sagepub.com/doi/full/10.1177/2515245920970949/) by 
+Daniël Lakens and Lisa Debruine
