@@ -26,7 +26,13 @@ image:
 url_slides: "/workshop/2020-05-24-preregistration-a-practical-guide/slides/preregistration-a-practical-guide.html"
 url_project: ~
 url_pdf: ~
-url_video: ~
+url_video: "https://www.youtube.com/watch?v=sqg2ghgtaqE"
 slides: ~
 projects: []
 ---
+
+
+```{r echo=FALSE}
+blogdown::shortcode("youtube",
+          id="sqg2ghgtaqE")
+```
