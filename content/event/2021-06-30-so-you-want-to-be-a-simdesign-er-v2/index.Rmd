@@ -1,7 +1,7 @@
 ---
 title: So, you want to be a SimDesign(er)? v2
 author: admin
-date: '2021-06-30T14:00:00-05:00'
+date: '2021-06-30T14:00:00-04:00'
 slug: []
 categories:
   - workshop
