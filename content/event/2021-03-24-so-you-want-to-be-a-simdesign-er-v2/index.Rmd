@@ -8,8 +8,8 @@ categories:
 tags: 
   - Data Simulation
   - R
-subtitle: 'A Monte Carlo Simulation workshop using the SimDesign package in R presented for the PsyPag & MSCP-Section Simulation Summer School.'
-summary: 'The goal of this workshop is to demonstrate how to write safe, effective, and intuitive R code for Monte Carlo simulation experiments.'
+subtitle: 'A Monte Carlo Simulation workshop using the SimDesign package in R.'
+summary: 'The goal of this workshop is to demonstrate how to write safe, effective, and intuitive R code for Monte Carlo simulation experiments  presented at the PsyPag & MSCP-Section Simulation Summer School'
 abstract: 'The purpose of this workshop is to demonstrate how to write safe, effective, and intuitive R code for Monte Carlo simulation experiments containing one or more simulation factors. A few of the attractive Monte Carlo simulation coding strategies we will cover are how to write code which is intuitive to read, write, and debug; how to take advantage of SimDesign’s built-in features for creating flexible and extensible simulations; computational efficiency; reproducibility at the macro and micro level; safe and reliable code execution'
 authors: [admin]
 date_end: '2021-06-30T16:00:00-04:00'
