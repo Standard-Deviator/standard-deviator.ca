@@ -25,7 +25,12 @@ image:
   preview_only: false
   alt_text: 'Splash image to advertise the workshop.'
 url_project: ""
-url_slides: "/workshop/2021-06-28-so-you-want-to-be-a-simdesigner-v2/slides/So-you-want-to-be-a-simdesigner-v2.html"
-url_video: ""
+url_slides: "/workshop/2021-06-30-so-you-want-to-be-a-simdesigner-v2/slides/So-you-want-to-be-a-simdesigner-v2.html"
+url_video: "https://www.youtube.com/watch?v=XY1EWZuIGUE"
 projects: []
 ---
+
+```{r echo=FALSE}
+blogdown::shortcode("youtube",
+          id="XY1EWZuIGUE")
+```
