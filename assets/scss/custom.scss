@@ -512,6 +512,8 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
 .dark .btn{
   letter-spacing: 2px;
   text-transform: uppercase;
+  transition: .5s;
+  background-color: var(--primrary);
 }
 
 .dark .form-control:focus{
@@ -519,13 +521,15 @@ inspired by https://www.youtube.com/watch?v=ccO2B40zkv4 */
 }
 
 .dark .btn:hover{
-  background: linear-gradient(180deg, var(--secondary), var(--primary));
+  background: var(--secondary);
   color: black;
   opacity: .9;
+  border-color: var(--secondary);
   box-shadow:
-      0 0 60px 10px #fff,  /* inner white */
-      0 0 100px 15px #f0f, /* middle magenta */
-      0 0 140px 20px #0ff; /* outer cyan */
+      0 0 5px var(--secondary),
+      0 0 25px var(--secondary),
+      0 0 50px var(--secondary);
+
 }
 
 .dark h1.mb-0::before{

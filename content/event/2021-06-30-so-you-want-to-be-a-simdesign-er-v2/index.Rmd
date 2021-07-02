@@ -17,7 +17,7 @@ all_day: no
 publishDate: '2021-06-30T9:99:99-04:00'
 lastmod: '2021-06-30T09:13:30-04:00'
 featured: no
-location: 'Delivered Virtually'
+location: 'Delivered Virtually for the PsyPag & MSCP-Section Simulation Summer School'
 image:
   placement: 1
   caption: ''
