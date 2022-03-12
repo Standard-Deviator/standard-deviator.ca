@@ -42,6 +42,11 @@ permalinks:
   categories: '/category/:slug/'
   publication_types: '/publication-type/:slug/'
 disableAliases: true
+# https://wowchemy.com/docs/hugo-tutorials/troubleshooting/
+# remove "WebAppManifest", "headers", "redirects"
+# blogdown::hugo_cmd("mod clean")
+# blogdown::hugo_cmd("mod tidy")
+# add "WebAppManifest", "headers", "redirects"
 outputs:
   home: [HTML, RSS, JSON, WebAppManifest, headers, redirects]
   section: [HTML, RSS]

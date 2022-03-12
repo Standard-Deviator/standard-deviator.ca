@@ -17,6 +17,20 @@ body{
   font-size: 16pt;
 }
 
+/* -----------sticky headers--------------- */
+/* https://www.digitalocean.com/community/tutorials/css-position-sticky */
+
+.mb-0 {
+  position: sticky;
+  top: 120px;
+}
+
+.align-items-lg-start {
+  display: flex;
+  //justify-content: space-around;
+  align-items: flex-start;
+}
+
 /* -----------revealing output------------- */
 input:checked + div { display: none; }
 

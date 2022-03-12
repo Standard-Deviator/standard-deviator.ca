@@ -27,5 +27,6 @@ image:
 url_project: "https://github.com/Standard-Deviator/SimDesign_workshop_2021"
 url_slides: "/workshop/SimDesign_workshop_2021/slides/workshop_slides.html"
 url_video: "https://osf.io/tc6ga/"
+url_rmarkdown: "/workshop/SimDesign_workshop_2021/slides/workshop_slides.Rmd"
 projects: []
 ---
