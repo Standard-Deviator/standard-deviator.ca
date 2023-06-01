@@ -53,12 +53,12 @@ contact_links:
 # Site header
 
 main_menu:
-  enable: true
+  enable: false
   align: l
   show_logo: true
   show_language: false
   show_day_night: false
-  show_search: true
+  show_search: false
   highlight_active_link: true
 
 # Localization
@@ -86,10 +86,10 @@ edit_page:
 show_related:
   book: true
   page: false
-  post: true
-  project: true
-  publication: true
-  event: true
+  post: false
+  project: false
+  publication: false
+  event: false
 reading_time: true
 section_pager: false
 docs_section_pager: true
@@ -129,7 +129,7 @@ comments:
   commento:
     url: ''
 search:
-  provider: wowchemy
+  provider: ''
   algolia:
     app_id: ''
     api_key: ''
@@ -146,7 +146,7 @@ marketing:
   baidu_site_verification: ''
   baidu_tongji: ''
 cms:
-  branch: master
+  branch: maintenance
   local_backend: false
 icon:
   pack:
