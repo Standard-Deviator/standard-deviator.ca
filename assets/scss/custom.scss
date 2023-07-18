@@ -188,7 +188,10 @@ h1 {
           animation: pulse 5s ease-in-out infinite;
     -webkit-animation-delay: 2s;
           animation-delay: 2s;
+
   }
+
+
   /* Pulse the social icons
   i{
     -webkit-animation: pulse 5s ease-in-out infinite;
@@ -205,6 +208,7 @@ body.dark {
   h1 {
     color: var(--secondary);
   }
+
   .avatar:not(.mr-3) {
     /*width: 40px;
     height: 40px;*/
@@ -216,6 +220,19 @@ body.dark {
       0 0 100px 60px #f0f, /* middle magenta */
       0 0 140px 90px #0ff; /* outer cyan */
   }
+
+  .avatar:not(.mr-3)::after {
+    /*width: 40px;
+    height: 40px;*/
+    opacity: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow:
+      0 0 60px 30px #fff,  /* inner white */
+      0 0 100px 60px #f0f, /* middle magenta */
+      0 0 140px 90px #0ff; /* outer cyan */
+  }
+
   #profile i:hover{
     /*width: 40px;
     height: 40px;
